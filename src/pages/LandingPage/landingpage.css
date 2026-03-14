@@ -1,0 +1,17 @@
+body {
+  background-color: #1e1e1e;
+}
+
+/* landingpage.css */
+.landing-page-container {
+  background-color: #1e1e1e;
+  /* Set your desired background color */
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  overflow: hidden;
+  /* Disable page scroll */
+}

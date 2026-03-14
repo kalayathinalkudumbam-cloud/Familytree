@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding-top: 60px; /* Adjust based on the height of your navbar */
+    font-family: Arial, sans-serif;
+}
+
+
+
+.container {
+    padding: 20px;
+    margin-top: 60px; /* Space below the navbar */
+}
+
+.section {
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Light background for each section */
+    border: 1px solid #ddd; /* Optional: Border for visual separation */
+    border-radius: 8px; /* Optional: Rounded corners */
+    overflow: hidden; /* Hide overflow to keep the design clean */
+}
+
+.section-name {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #fff; /* Background color to differentiate the section name */
+    border-bottom: 1px solid #ddd; /* Border to separate the name from content */
+}
+
+.section-content {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to keep items in a single row */
+    gap: 10px; /* Space between the items */
+    min-height: 300px; /* Fixed height for the scrollable area */
+    overflow-x: auto; /* Scrollable content horizontally */
+    padding: 20px; /* Padding for the content area */
+}
+
+.section-content img,
+.section-content video {
+    
+    width: 300px !important;/* Fixed width for each item */
+    height: 300px !important;/* Fixed height for each item */
+    object-fit: cover; /* Ensure images and videos cover the area of their container */
+}
+
+
+/* Existing CSS */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Ensure it is above all other content */
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .section-content {
+        max-height: 150px; /* Adjust height for smaller screens */
+    }
+
+    .section-content img,
+    .section-content video {
+        width: 150px; /* Adjust width for smaller screens */
+        height: 150px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-content {
+        max-height: 100px; /* Adjust height for very small screens */
+    }
+
+    .section-content img,
+    .section-content video {
+        width: 100px; /* Adjust width for very small screens */
+        height: 100px; /* Adjust height for very small screens */
+    }
+}

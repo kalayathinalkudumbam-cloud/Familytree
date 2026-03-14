@@ -1,0 +1,110 @@
+/* Custom styles to fix card interactivity issues */
+.f3 .f3-svg-circle-hover {
+    pointer-events: auto !important;
+    z-index: 1000 !important;
+}
+
+.f3 .f3-svg-circle-hover svg {
+    pointer-events: none;
+}
+
+.f3 .f3-svg-circle-hover:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+/* Ensure card hover effects work */
+.f3 div.card {
+    pointer-events: auto !important;
+}
+
+.f3 div.card:hover>div {
+    transform: translate(0, -2px) !important;
+    transition: transform 0.2s ease-in-out !important;
+}
+
+/* Fix button positioning and visibility */
+.f3 .edit-button,
+.f3 .add-button {
+    pointer-events: auto !important;
+    z-index: 1000 !important;
+    position: absolute !important;
+}
+
+.f3 .edit-button:hover,
+.f3 .add-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* Override autocomplete dropdown to be opaque white */
+.f3-autocomplete input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.f3-autocomplete-items {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.f3-autocomplete-item>div {
+    color: #000000 !important;
+}
+
+.f3 {
+    --female-color: rgb(255, 70, 163);
+    --male-color: rgb(3, 155, 229);
+}
+
+/* Force mobile layout overrides */
+@media (max-width: 768px) {
+    .f3-form-cont.opened {
+        width: 100% !important;
+    }
+
+    /* Hide controls when form is open */
+    .f3-controls.hidden-mobile {
+        display: none !important;
+    }
+}
+
+/* Force close button to the right side */
+.f3-close-btn {
+    left: auto !important;
+    right: 15px !important;
+}
+
+/* Make the details pane scrollable */
+.f3-form-cont {
+    overflow-y: auto !important;
+    max-height: 100vh !important;
+}
+
+.f3-form,
+.f3-edit-form {
+    height: auto !important;
+    min-height: min-content !important;
+    padding-bottom: 100px !important;
+    /* Extra padding to ensure delete button is reachable */
+}
+
+/* Custom scrollbar for the details pane */
+.f3-form-cont::-webkit-scrollbar {
+    width: 8px;
+}
+
+.f3-form-cont::-webkit-scrollbar-track {
+    background: rgba(33, 33, 33, 0.9);
+}
+
+.f3-form-cont::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.f3-form-cont::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}

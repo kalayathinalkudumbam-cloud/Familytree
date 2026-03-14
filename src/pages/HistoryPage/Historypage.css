@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffcb2e;
+    position: relative;
+
+  text-align: center;
+  
+  padding: 40px 40px;
+  
+}
+
+.container {
+    position: relative;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.title, .textArea {
+    position: relative;
+    
+}
+
+.title {
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.textArea {
+    margin: 20px;
+    padding: 30px;
+    font-size: 1.2em;
+    color: #333;
+    max-height: 60vh;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+.textArea p {
+    margin-bottom: 1em;
+}
+
+.title:hover, .textArea:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+        padding: 15px 30px;
+    }
+
+    .textArea {
+        font-size: 1em;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+
+    .textArea {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .navbar {
+        padding: 5px;
+        top: 5px; /* Adjust the top position slightly */
+    }
+
+    .container {
+        padding-top: 55px; /* Slightly increase top padding for the container */
+    }
+}

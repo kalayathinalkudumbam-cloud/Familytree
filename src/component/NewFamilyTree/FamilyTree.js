@@ -25,8 +25,8 @@ export default function FamilyTree() {
     const [saving, setSaving] = useState(false);
 
     // CONFIGURATION (Using Environment Variables)
-    const CLOUDFLARE_WORKER_URL = process.env.REACT_APP_CLOUDFLARE_WORKER_URL;
-    const ADMIN_SECRET_PASSWORD = process.env.REACT_APP_ADMIN_SECRET_PASSWORD;
+    const CLOUDFLARE_WORKER_URL = 'https://lively-water-86e2.testpegtree1.workers.dev/';//process.env.REACT_APP_CLOUDFLARE_WORKER_URL;
+    const ADMIN_SECRET_PASSWORD = 'HFisHWifhKx';//process.env.REACT_APP_ADMIN_SECRET_PASSWORD;
     const CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
     const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
 
@@ -201,28 +201,60 @@ export default function FamilyTree() {
                             }
                         });
 
-                        // AUTO-SEARCH logic: if a name or personId was passed in the URL, trigger the search effect
-                        const targetId = params.get('personId');
+                        // AUTO-SEARCH logic: if a name or personId (or id/ordinalId) was passed in the URL, trigger the search effect
+                        const targetId = params.get('personId') || params.get('id') || params.get('ordinalId') || params.get('ordinialId');
                         const nameToSearch = searchName ? decodeURIComponent(searchName) : '';
+
+                        const findPersonById = (idValue) => {
+                            if (idValue == null) return null;
+                            const idStr = String(idValue).trim();
+
+                            return treeData.find((p) => {
+                                if (!p) return false;
+
+                                const candidates = [
+                                    p.id,
+                                    p?.data?.id,
+                                    p?.data?.UNID,
+                                    p?.data?.originalID,
+                                    p?.data?.['originalID'],
+                                    p?.data?.['UNID'],
+                                ];
+
+                                return candidates.some((c) => String(c) === idStr);
+                            });
+                        };
 
                         if (targetId || searchName) {
                             if (searchName) autocompleteInput.value = nameToSearch;
 
-                            let targetPerson;
-                            if (targetId) {
-                                // 1. Try to find exactly by unique internal ID (Precision)
-                                targetPerson = treeData.find(p => String(p.id) === String(targetId));
-                            }
+                            let targetPerson = findPersonById(targetId);
 
                             if (!targetPerson && searchName) {
-                                // 2. Fallback to name search if ID not found or not provided
-                                targetPerson = treeData.find(p => getPersonName(p).toLowerCase() === nameToSearch.toLowerCase());
+                                // Fallback to name search if ID not found or not provided
+                                targetPerson = treeData.find(
+                                    (p) => getPersonName(p).toLowerCase() === nameToSearch.toLowerCase()
+                                );
                             }
 
                             if (targetPerson) {
-                                console.log("Automatically searching/focusing on person ID:", targetPerson.id);
-                                f3Chart.updateMainId(targetPerson.id);
+                                const mainId =
+                                    targetPerson.id ??
+                                    targetPerson?.data?.id ??
+                                    targetId;
+
+                                console.log(
+                                    "Automatically searching/focusing on person ID:",
+                                    { resolvedId: mainId, targetPerson }
+                                );
+
+                                f3Chart.updateMainId(mainId);
                                 f3Chart.updateTree({ initial: false });
+                            } else {
+                                console.warn(
+                                    "Could not find a person with ID/name from URL params:",
+                                    { targetId, nameToSearch }
+                                );
                             }
                         }
                     }

@@ -59,11 +59,11 @@ const Navbar = () => {
               {isAuthenticated ? "Homepage" : "Login"}
             </button>
           </li>
-          <li><NavLink to="/aboutpet" onClick={closeMenu} activeClassName="active">About PET</NavLink></li>
+          {/* <li><NavLink to="/aboutpet" onClick={closeMenu} activeClassName="active">About PET</NavLink></li> */}
           <li><NavLink to="/homepage" onClick={closeMenu} activeClassName="active">Genealogy</NavLink></li>
-          <li><NavLink to="/history" onClick={closeMenu} activeClassName="active">History</NavLink></li>
-          <li><NavLink to="/gallery" onClick={closeMenu} activeClassName="active">Gallery</NavLink></li>
-          <li><NavLink to="/MemberList" onClick={closeMenu} activeClassName="active">Member List</NavLink></li>
+          {/* <li><NavLink to="/history" onClick={closeMenu} activeClassName="active">History</NavLink></li> */}
+          {/* <li><NavLink to="/gallery" onClick={closeMenu} activeClassName="active">Gallery</NavLink></li> */}
+          {/* <li><NavLink to="/MemberList" onClick={closeMenu} activeClassName="active">Member List</NavLink></li> */}
           {isAuthenticated && (
             <li>
               <button onClick={handleLogout} className="logout-button">Logout</button>

@@ -10,8 +10,8 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   // Fetch the environment variables
-  const adminUsername = process.env.REACT_APP_USERNAME_ADMIN;
-  const adminPassword = process.env.REACT_APP_PASSWORD_ADMIN;
+  const adminUsername = 'seby';/*process.env.REACT_APP_USERNAME_ADMIN;*/
+  const adminPassword = 'seby';/*process.env.REACT_APP_PASSWORD_ADMIN;*/
   const userUsername = process.env.REACT_APP_USERNAME_USER;
   const userPassword = process.env.REACT_APP_PASSWORD_USER;
 

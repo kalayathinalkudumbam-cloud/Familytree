@@ -62,18 +62,18 @@
 }
 
 /* Position the children along the circle border */
-.card-0 { transform: rotate(0deg) translate(200px) rotate(-0deg); }
-.card-1 { transform: rotate(30deg) translate(200px) rotate(-30deg); }
-.card-2 { transform: rotate(60deg) translate(200px) rotate(-60deg); }
+.card-0 { transform: rotate(270deg) translate(200px) rotate(-270deg); }
+.card-1 { transform: rotate(330deg) translate(200px) rotate(-330deg); }
+.card-2 { transform: rotate(30deg) translate(200px) rotate(-30deg); }
 .card-3 { transform: rotate(90deg) translate(200px) rotate(-90deg); }
-.card-4 { transform: rotate(120deg) translate(200px) rotate(-120deg); }
-.card-5 { transform: rotate(150deg) translate(200px) rotate(-150deg); }
-.card-6 { transform: rotate(180deg) translate(200px) rotate(-180deg); }
+.card-4 { transform: rotate(150deg) translate(200px) rotate(-150deg); }
+.card-5 { transform: rotate(210deg) translate(200px) rotate(-210deg); }
+/*.card-6 { transform: rotate(180deg) translate(200px) rotate(-180deg); }
 .card-7 { transform: rotate(210deg) translate(200px) rotate(-210deg); }
 .card-8 { transform: rotate(240deg) translate(200px) rotate(-240deg); }
 .card-9 { transform: rotate(270deg) translate(200px) rotate(-270deg); }
 .card-10 { transform: rotate(300deg) translate(200px) rotate(-300deg); }
-.card-11 { transform: rotate(330deg) translate(200px) rotate(-330deg); }
+.card-11 { transform: rotate(330deg) translate(200px) rotate(-330deg); }*/
 
 @media (max-width: 768px) {
   .circle-container {
@@ -87,18 +87,18 @@
   }
 
   /* Adjust positions */
-  .card-0 { transform: rotate(0deg) translate(150px) rotate(-0deg); }
-  .card-1 { transform: rotate(30deg) translate(150px) rotate(-30deg); }
-  .card-2 { transform: rotate(60deg) translate(150px) rotate(-60deg); }
-  .card-3 { transform: rotate(90deg) translate(150px) rotate(-90deg); }
-  .card-4 { transform: rotate(120deg) translate(150px) rotate(-120deg); }
-  .card-5 { transform: rotate(150deg) translate(150px) rotate(-150deg); }
-  .card-6 { transform: rotate(180deg) translate(150px) rotate(-180deg); }
+.card-0 { transform: rotate(270deg) translate(200px) rotate(-270deg); }
+.card-1 { transform: rotate(330deg) translate(200px) rotate(-330deg); }
+.card-2 { transform: rotate(30deg) translate(200px) rotate(-30deg); }
+.card-3 { transform: rotate(90deg) translate(200px) rotate(-90deg); }
+.card-4 { transform: rotate(150deg) translate(200px) rotate(-150deg); }
+.card-5 { transform: rotate(210deg) translate(200px) rotate(-210deg); }
+  /*.card-6 { transform: rotate(180deg) translate(150px) rotate(-180deg); }
   .card-7 { transform: rotate(210deg) translate(150px) rotate(-210deg); }
   .card-8 { transform: rotate(240deg) translate(150px) rotate(-240deg); }
   .card-9 { transform: rotate(270deg) translate(150px) rotate(-270deg); }
   .card-10 { transform: rotate(300deg) translate(150px) rotate(-300deg); }
-  .card-11 { transform: rotate(330deg) translate(150px) rotate(-330deg); }
+  .card-11 { transform: rotate(330deg) translate(150px) rotate(-330deg); }*/
 }
 
 @media (max-width: 480px) {
@@ -117,16 +117,16 @@
   }
 
   /* Adjust positions */
-  .card-0 { transform: rotate(0deg) translate(125px) rotate(-0deg); }
-  .card-1 { transform: rotate(30deg) translate(125px) rotate(-30deg); }
-  .card-2 { transform: rotate(60deg) translate(125px) rotate(-60deg); }
-  .card-3 { transform: rotate(90deg) translate(125px) rotate(-90deg); }
-  .card-4 { transform: rotate(120deg) translate(125px) rotate(-120deg); }
-  .card-5 { transform: rotate(150deg) translate(125px) rotate(-150deg); }
-  .card-6 { transform: rotate(180deg) translate(125px) rotate(-180deg); }
+.card-0 { transform: rotate(270deg) translate(200px) rotate(-270deg); }
+.card-1 { transform: rotate(330deg) translate(200px) rotate(-330deg); }
+.card-2 { transform: rotate(30deg) translate(200px) rotate(-30deg); }
+.card-3 { transform: rotate(90deg) translate(200px) rotate(-90deg); }
+.card-4 { transform: rotate(150deg) translate(200px) rotate(-150deg); }
+.card-5 { transform: rotate(210deg) translate(200px) rotate(-210deg); }
+  /*.card-6 { transform: rotate(180deg) translate(125px) rotate(-180deg); }
   .card-7 { transform: rotate(210deg) translate(125px) rotate(-210deg); }
   .card-8 { transform: rotate(240deg) translate(125px) rotate(-240deg); }
   .card-9 { transform: rotate(270deg) translate(125px) rotate(-270deg); }
   .card-10 { transform: rotate(300deg) translate(125px) rotate(-300deg); }
-  .card-11 { transform: rotate(330deg) translate(125px) rotate(-330deg); }
+  .card-11 { transform: rotate(330deg) translate(125px) rotate(-330deg); }*/
 }

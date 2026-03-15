@@ -25,11 +25,12 @@ export default function FamilyTree() {
     const [saving, setSaving] = useState(false);
 
     // CONFIGURATION (Using Environment Variables)
-    const CLOUDFLARE_WORKER_URL = 'https://lively-water-86e2.testpegtree1.workers.dev/';//process.env.REACT_APP_CLOUDFLARE_WORKER_URL;
-    const ADMIN_SECRET_PASSWORD = 'HFisHWifhKx';//process.env.REACT_APP_ADMIN_SECRET_PASSWORD;
+    const CLOUDFLARE_WORKER_URL = process.env.REACT_APP_CLOUDFLARE_WORKER_URL;
+    const ADMIN_SECRET_PASSWORD = process.env.REACT_APP_ADMIN_SECRET_PASSWORD;
     const CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
     const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
 
+    
     // 1. FETCH DATA FROM CLOUDFLARE ON LOAD
     useEffect(() => {
         const fetchData = async () => {
